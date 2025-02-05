@@ -10,7 +10,7 @@ axios.interceptors.response.use(
     return Promise.reject(error);
   }
 );
-
+let count=0;
 export default {
   getTasks: async () => {
     const result = await axios.get(`/Items`)    
@@ -18,17 +18,20 @@ export default {
   },
 
   addTask: async(name)=>{
-    const result=await axios.post(`/Items`,{Name:name})
+    count+=1;
+    const result=await axios.post(`/Items`,{Name:name,Id:count})
     return result.data
   },
 
-  setCompleted: async(id, isComplete)=>{
-    const result=await axios.put(`/Items/${id}`,{IsComplete: isComplete})
+  setCompleted: async(t)=>{
+    console.log(t);
+    
+    const result=await axios.put(`/Items/${t.Id}`,{IsComplete: t.isComplete})
     return result.data
   },
 
-  deleteTask:async(item)=>{
-    const result=await axios.delet(`/Items/${item.id}`,item)
+  deleteTask:async(id)=>{   
+    const result=await axios.delete(`/Items/${id}`)
     return result.data
   }
 };
