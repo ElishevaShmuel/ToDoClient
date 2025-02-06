@@ -1,6 +1,8 @@
 import axios from 'axios';
+import dotenv from 'dotenv';
+dotenv.config();
 
-axios.defaults.baseURL = 'http://localhost:5085'; 
+axios.defaults.baseURL = API_URL; 
 
 
 axios.interceptors.response.use(
