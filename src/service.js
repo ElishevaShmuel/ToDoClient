@@ -2,7 +2,7 @@ import axios from 'axios';
 import dotenv from 'dotenv';
 dotenv.config();
 
-axios.defaults.baseURL = "https://todoapi-dbpj.onrender.com"; 
+axios.defaults.baseURL = apiUrl.env.API_URL; 
 
 
 axios.interceptors.response.use(
