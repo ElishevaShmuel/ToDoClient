@@ -9,7 +9,7 @@ axios.interceptors.response.use(
   response => response, 
     error => {
     console.error('API Error:', error.response ? error.response.data : error.message);
-    return Promise.reject(error);
+    return Promise.reject();
   }
 );
 let count=0;
