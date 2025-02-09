@@ -1,9 +1,7 @@
 import axios from 'axios';
-import dotenv from 'dotenv';
-dotenv.config();
 
-axios.defaults.baseURL = apiUrl.env.API_URL; 
-console.log(apiUrl.env.API_URL)
+const URL = process.env.API_URL; 
+axios.defaults.baseURL=URL
 
 axios.interceptors.response.use(
   response => response, 
