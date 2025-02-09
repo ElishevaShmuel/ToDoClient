@@ -8,7 +8,7 @@ axios.defaults.baseURL=URL
 axios.interceptors.response.use(
   response => response, 
     error => {
-    console.error('API Error:', error.response ? error.response.data : error.message);
+    console.error(" process.env"+ process.env);
     return Promise.reject(error);
   }
 );
