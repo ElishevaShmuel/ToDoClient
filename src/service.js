@@ -14,7 +14,7 @@ let count=0;
 export default {
   getTasks: async () => {
     const result = await axios.get(`/Items`)    
-    // console.log(result.data);
+    console.log(result.data);
     console.log(URL);
     
     return result.data;
