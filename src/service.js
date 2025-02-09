@@ -3,14 +3,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 axios.defaults.baseURL = apiUrl.env.API_URL; 
-console.log(axios.defaults.baseURL);
-
+console.log(apiUrl.env.API_URL)
 
 axios.interceptors.response.use(
   response => response, 
     error => {
     console.error('API Error:', error.response ? error.response.data : error.message);
-    return Promise.reject();
+    return Promise.reject(error);
   }
 );
 let count=0;
