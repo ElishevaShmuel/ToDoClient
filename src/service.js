@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 axios.defaults.baseURL = apiUrl.env.API_URL; 
+console.log(axios.defaults.baseURL);
 
 
 axios.interceptors.response.use(
