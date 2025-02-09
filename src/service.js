@@ -3,7 +3,7 @@ import axios from 'axios';
 const URL = process.env.REACT_APP_API_URL;
 // console.log('API URL:', process.env.REACT_APP_API_URL);
 
-axios.defaults.baseURL=URL
+axios.defaults.baseURL="https://todoapi-dbpj.onrender.com"
 
 axios.interceptors.response.use(
   response => response, 
