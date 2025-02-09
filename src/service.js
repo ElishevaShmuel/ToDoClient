@@ -8,7 +8,7 @@ axios.defaults.baseURL=URL
 axios.interceptors.response.use(
   response => response, 
     error => {
-    console.error(" process.env"+ process.env);
+    console.error('API Error:', error.response ? error.response.data : error.message);
     return Promise.reject(error);
   }
 );
@@ -17,8 +17,8 @@ export default {
   getTasks: async () => {
     const result = await axios.get(`/Items`)    
     console.log(result.data);
-    console.log(URL);
-    console.log('API URL:', process.env.REACT_APP_API_URL);
+    console.log(' process.env:', process.env);
+  
 
     return result.data;
   },
